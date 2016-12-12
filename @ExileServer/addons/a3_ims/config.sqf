@@ -36,8 +36,16 @@
 	/* --- DO NOT ENABLE THIS OPTION --- */
 	/* --- Overmind Mission Settings --- */
 	/* --- ALTIS MAP ONLY --- */
-		IMS_Overmind_MissionActive				= false;	//Enable or disable the Overmind Mission
+		IMS_Overmind_MissionActive				= true;	//Enable or disable the Overmind Mission
 
 
 /* DO NOT EDIT BELOW THIS LINE IF YOU DONT KNOW WHAT YOU ARE DOING! */
+
+// Enable the Dynamic Simulation system.
+enableDynamicSimulation true;
+// Sets activation Dynamic Simulation distance for given group category.
+"Group" setDynamicSimulationDistance 50;
+
+
+// Add public Variables to Server enviroment.
 publicVariable "IMS_Fortress_Timer";

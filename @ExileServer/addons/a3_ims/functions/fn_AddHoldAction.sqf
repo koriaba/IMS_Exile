@@ -32,6 +32,8 @@ _idleIcon = switch (_type) do {
 	case "talk": {"icons\holdAction_talk.paa"};
 	case "read": {"icons\holdAction_read.paa"};
 	case "supply": {"icons\holdAction_supply.paa"};
+	case "lock": {"icons\holdAction_lock.paa"};
+	case "unlock": {"icons\holdAction_unlock.paa"};
 	default {"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa"};		
 };
 

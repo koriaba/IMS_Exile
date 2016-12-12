@@ -17,7 +17,8 @@
     [
     	_vehicleClass,					// STRING: Classname of the vehicle
     	_pos, 							// ARRAY: Position to spawn it at (roughly)
-		_height							// NUMBER: Height in meters where the vehicle spawns.
+		_height,						// NUMBER: Height in meters where the vehicle spawns.
+		_markerName						// STRING: Marker name of the spawned vehicle
     ] call IMS_fnc_SpawnNonPersistentVehicle;
 
 	Returns the vehicle object of the created vehicle.
@@ -125,7 +126,7 @@ sleep 0.1;
 _positionNew = _oldPos findEmptyPosition [10, 250, _vehicleClass];
 _vehObj setPos _positionNew;
 sleep 0.1;
-[_positionNew, "IMS", _markerName] call IMS_fnc_CreateMarker;
+[_positionNew, "ExileHeart", "IMS", _markerName] call IMS_fnc_CreateMarker;
 
 if (IMS_DEBUG) then
 {

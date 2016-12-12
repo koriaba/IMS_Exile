@@ -16,5 +16,4 @@
 */
 
 [
-	["Land_PortableGenerator_01_F", [16007.1, 16914.4, 14.7258], [0.851658, -0.524097, 0], [0, 0, 1], false, "Activate the generator", "use", "_this distance _target < 5", {remoteExec ["IMS_Overmind_Generator_ActionScript", 0, true];}, "OvermindGenerator"]
 ]

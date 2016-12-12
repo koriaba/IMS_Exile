@@ -6,16 +6,21 @@
 		[-0.783477, -0.621421, 0],											// [VALUE] Vector Direction of the object
 		[0, 0, 1], 															// [VALUE] Vector Up of the object.
 		false, 																// [BOOLEAN] Object simulation.
-		"FortressGate",														// [STRING] Variable Name for the given object. In this example the object can always be selected as target with the name "IMS_IneractionObject_FortressGate".
+		"FortressGate"														// [STRING] Variable Name for the given object. In this example the object can always be selected as target with the name "IMS_IneractionObject_FortressGate".
 	]
 
 */
 
 [
-	["Exile_Construction_ConcreteGate_Static", [15986, 17059.1, 13.7247], [-0.888389, 0.459064, 0.00498847], [-0.00265204, -0.0159975, 0.999869], false, "OvermindGate"],
-	["Land_TripodScreen_01_dual_v1_F", [16007.6, 16913.2, 15.1603], [0.99021, 0.139589, 0], [0, 0, 1], false, "OvermindDualscreen_1"],
-	["Land_TripodScreen_01_dual_v2_F", [16009.3, 16916.3, 15.1964], [0.299857, -0.953984, 0], [0, 0, 1], false, "OvermindDualscreen_2"],
-	["Land_TripodScreen_01_large_F", [16007.8, 16915.1, 15.3934], [0.917157, -0.398526, 0], [0, 0, 1], false, "OvermindScreen"],
-	["Land_PCSet_01_case_F", [16009, 16915.3, 14.6072], [-0.926314, 0.376753, 0], [0, 0, 1], false, "OvermindPc"],
-	["Land_PCSet_01_keyboard_F", [16008.7, 16914.3, 15.1711], [-0.923077, 0.384615, 0], [0, 0, 1], false, "OvermindKeyboard"]
+	["Land_Laptop_unfolded_F", [16016.5, 17022.6, 15.0492], [0.510654, 0.859787, 0], [0, 0, 1], false, "OvermindLaptop"],
+	["Land_InfoStand_V2_F", [16006.8, 17019.4, 14.1356], [0.481351, 0.876528, 0], [0, 0, 1], false, "OvermindKeypad1"],
+	["Land_InfoStand_V2_F", [16005.1, 17022.1, 14.0973], [-0.462969, -0.886375, 0], [0, 0, 1], false, "OvermindKeypad2"],
+	["Land_Tablet_02_F", [16122.1, 16871.4, 29.514], [-0.946459, -0.322823, 0], [0, 0, 1], false, "OvermindTablet"],
+	["Land_PCSet_01_case_F", [16008.6, 16914, 15.4201], [-0.922942, 0.384938, 0], [0, 0, 1], false, "OvermindPC"],
+	["Land_PortableGenerator_01_F", [16006.7, 16913, 14.7258], [0.907223, -0.42065, 0], [0, 0, 1], false, "OvermindGenerator"],
+	["Land_PCSet_01_keyboard_F", [16008.4, 16913, 15.1711], [-0.924326, 0.381603, 0], [0, 0, 1], false, "OvermindKeyboard"],
+	["Land_TripodScreen_01_dual_v1_F", [16007.3, 16911.9, 15.1592], [0.918815, 0.394687, 0], [0, 0, 1], false, "OvermindScreen1"],
+	["Land_TripodScreen_01_dual_v2_F", [16008.6, 16915, 15.1964], [0.282985, -0.959124, 0], [0, 0, 1], false, "OvermindScreen2"],
+	["Land_TripodScreen_01_large_F", [16007.2, 16913.7, 15.3933], [0.932568, -0.360994, 0], [0, 0, 1], false, "OvermindMainScreen"],
+	["Land_DataTerminal_01_F", [16011.8, 16916.6, 15.174], [0.364342, 0.931265, 0], [0, 0, 1], false, "OvermindTerminal"]
 ]

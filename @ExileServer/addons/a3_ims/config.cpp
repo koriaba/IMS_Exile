@@ -33,8 +33,8 @@ class CfgFunctions
 			class AddHoldAction 								{};
 			class CreateMarker									{};	
 			class DebugLog										{};
-			class LootDrop 										{};
 			class EndBombing 									{};
+			class HideTerrainObject								{};
 			class FillSupplyBox 								{};
 			class ImportFromExileEdenPlugin 					{};
 			class ImportFromExileEdenPluginInteraction 			{};
@@ -44,6 +44,10 @@ class CfgFunctions
 			class ImportInteractionCrates						{};
 			class InteractionNpcCreate 							{};
 			class InteractionNpcOnAnimationDone 				{};
+			class LootDrop 										{};
+			class SetGroupBehavior								{};
+			class SpawnAIGroup_MultiPos							{};
+			class SpawnAISoldier								{};
 			class SpawnNonPersistentVehicle						{};
 			class SpawnPersistentVehicle						{};
 		};

@@ -358,12 +358,12 @@ _groupReinforcementsInfo =
 	]
 ];
 
-// Add mission objects to monitor.
+// Define mission-spawned objects and loot values
 _missionObjs =
 [
-	[_missionAIUnits],										// static gun(s). Note, we don't add the base itself because it already spawns on server start.
-	[],														// No Vehicle prize
-	[]														// Crate price setup (Example: [[_crate,_crate_loot_values]])
+	[],	
+	[],
+	[]
 ];
 
 // Define Mission Start message
@@ -428,20 +428,7 @@ My_Custom_DMS_Mission_Index = (count DMS_StaticMission_Arr) - 1;
 if !(_added) exitWith
 {
 	diag_log format ["DMS ERROR :: Attempt to set up mission %1 with invalid parameters for DMS_fnc_AddMissionToMonitor_Static! Deleting mission objects and resetting DMS_MissionCount.",_missionName];
-
-	_cleanup = [];
-	{
-		_cleanup pushBack _x;
-	} forEach _missionAIUnits;
-
-	_cleanup pushBack ((_missionObjs select 0)+(_missionObjs select 1));
 	
-	{
-		_cleanup pushBack (_x select 0);
-	} foreach (_missionObjs select 2);
-
-	_cleanup call DMS_fnc_CleanUp;
-
 	// Delete the markers directly
 	{deleteMarker _x;} forEach _markers;
 

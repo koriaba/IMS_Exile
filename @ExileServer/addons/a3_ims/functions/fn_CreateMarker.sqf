@@ -5,6 +5,7 @@
 	Usage:
 	[
 		_position,				// ARRAY (positionATL or position2d): Where the marker will be spawned (strict)
+		_markerType,			// STRING: Icon type of the marker. Example: "ExileHeart"
 		_markerLabel,			// NUMBER: Label to spawn for the marker.
 		_markerName				// STRING: Name to spawn for the marker.
 	] call IMS_fnc_CreateMarker;
@@ -19,6 +20,7 @@ try
 	if !(params
 	[
 		"_position",
+		"_markerType"
 		"_markerLabel",
 		"_markerName"
 	])
@@ -28,6 +30,7 @@ try
 	};
 	_marker = createMarker [_markerName, _position];
 	_marker setMarkerType "ExileHeart";
+	_marker setMarkerType _markerType;
 	_marker setMarkerAlpha 1; 
 	_marker setMarkerText format ["[%1] %2", _markerLabel,_markerName];
 	_marker setMarkerColor "ColorOrange";

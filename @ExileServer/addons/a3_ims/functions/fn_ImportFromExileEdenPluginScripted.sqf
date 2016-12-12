@@ -25,7 +25,7 @@ exitWith
 };
 
 // The next few lines checks to see if the static base has been spawned previously, in order to avoid spawning duplicate objects.
-private _varname = format ["IMS_StaticBaseSpawned_%1",_file];
+private _varname = format ["IMS_ScriptedObjectsSpawned_%1",_file];
 
 if (missionNamespace getVariable [_varname,false]) exitWith
 {
