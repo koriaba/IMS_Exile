@@ -49,6 +49,9 @@ IMS_Overmind_Toast_Locked = {
 	["SuccessTitleAndText", ["<t color='#a0df3b' font='PuristaSemiBold'>Locked</t>", format ["<t color='#fbfcfe' font='PuristaSemiBold'>Building is locked now!</t>"]]] call ExileClient_gui_toaster_addTemplateToast;
 };
 
+IMS_Overmind_Toast_Npc = {
+	["InfoTitleAndText", ["<t color='#3fd4fc' font='PuristaSemiBold'>Wounded Officer</t>", format ["<t color='#fbfcfe' font='PuristaSemiBold'>The wounded officer is pointing to his pocked and trys to talk as he dies..</t>"]]] call ExileClient_gui_toaster_addTemplateToast;
+};
 
 publicVariable "IMS_Overmind_Toast1_Laptop";
 publicVariable "IMS_Overmind_Toast2_Laptop";
@@ -61,3 +64,4 @@ publicVariable "IMS_Overmind_Toast_PC";
 publicVariable "IMS_Overmind_Toast_Keyboard";
 publicVariable "IMS_Overmind_Toast1_Terminal";
 publicVariable "IMS_Overmind_Toast2_Terminal";
+publicVariable "IMS_Overmind_Toast_Npc";

@@ -180,3 +180,19 @@ IMS_Overmind_Tablet_ActionScript = {
 	// Notify player with toast.
 	[] remoteExec ["IMS_Overmind_Toast_Tablet", _playerUnits, true];
 };
+
+IMS_Overmind_Npc_ActionScript = {
+	// Define mission player units.
+	private _playerUnits = ([16060,16962.4,0] nearEntities ["Exile_Unit_Player", 250]);
+	// Create the first mission task.
+	[] remoteExec ["IMS_Overmind_TaskEvent_1", _playerUnits, true];
+	// Notify player with toast.
+	[] remoteExec ["IMS_Overmind_Toast_Npc", _playerUnits, true];
+	sleep 3;
+	IMS_InteractionNpc_OvermindQuestgiver removeAllEventHandlers "AnimDone";
+	IMS_InteractionNpc_OvermindQuestgiver allowDamage true;
+	IMS_InteractionNpc_OvermindQuestgiver setDamage 1;
+	sleep 3;
+	// Notify player with toast.
+	[] remoteExec ["IMS_Toast_NewTask", _playerUnits, true];
+};

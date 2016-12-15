@@ -45,6 +45,14 @@ if (_positionsCount<1) exitWith
 	grpNull
 };
 
+private _directionsCount = count _directions;
+
+if (_directionsCount<1) exitWith
+{
+	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_MultiPos with an empty list of directions! _this: %1",_this];
+	grpNull
+};
+
 if (_count < 1) exitWith
 {
 	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_MultiPos with less than 1 _count! _this: %1",_this];

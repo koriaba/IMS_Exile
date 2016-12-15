@@ -42,6 +42,7 @@ class CfgFunctions
 			class ImportFromExileEdenPluginSimple 				{};
 			class ImportFromExileEdenPluginSimpleInteraction 	{};
 			class ImportInteractionCrates						{};
+			class ImportInteractionNpcs							{};
 			class InteractionNpcCreate 							{};
 			class InteractionNpcOnAnimationDone 				{};
 			class LootDrop 										{};

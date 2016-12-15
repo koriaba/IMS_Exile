@@ -74,8 +74,10 @@ if (worldName == 'Altis') then
 		["altis\overmind\Objects"] call IMS_fnc_ImportFromExileEdenPlugin;
 		["altis\overmind\InteractionObjects"] call IMS_fnc_ImportFromExileEdenPluginInteraction;
 		["altis\overmind\ScriptObjects"] call IMS_fnc_ImportFromExileEdenPluginScripted;
+		["altis\overmind\Npcs"] call IMS_fnc_ImportInteractionNpcs;
 		// Mission Scripts
 		CALLFILE("\x\addons\ims\missions\altis\overmind\IMS_Overmind_GlobalVars.sqf");
+		CALLFILE("\x\addons\ims\missions\altis\overmind\IMS_Overmind_Tasks.sqf");
 		CALLFILE("\x\addons\ims\missions\altis\overmind\IMS_Overmind_Toasts.sqf");
 		CALLFILE("\x\addons\ims\missions\altis\overmind\IMS_Overmind_HoldActionEvents.sqf");
 		diag_log format['[IMS Server Addon] [Altis] Overmind Mission active!'];
