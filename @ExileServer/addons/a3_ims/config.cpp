@@ -47,6 +47,7 @@ class CfgFunctions
 			class InteractionNpcOnAnimationDone 				{};
 			class LootDrop 										{};
 			class SetGroupBehavior								{};
+			class SpawnAIGroup_Patrol							{};
 			class SpawnAIGroup_MultiPos							{};
 			class SpawnAISoldier								{};
 			class SpawnNonPersistentVehicle						{};

@@ -1,5 +1,5 @@
 /*
-	IMS_fnc_SpawnAIGroup_MultiPos
+	IMS_fnc_SpawnAIGroup_Patrol
 	Created by eraser1 and modified by Salutesh
 
 
@@ -13,12 +13,18 @@
 			...
 			_positionN			// ARRAY (positionATL): Potential location for AI to spawn #N
 		],
+		[
+			_waypoint1,			// ARRAY (positionATL): Waypoint location for AI group
+			_waypoint2,			// ARRAY (positionATL): Waypoint location for AI group
+			...
+			_waypointN			// ARRAY (positionATL): Waypoint location for AI group
+		],
 		_count,					// SCALAR (Integer > 0): Number of AI
 		_difficulty,			// STRING: AI Difficulty: "random","hardcore","difficult","moderate", or "easy"
 		_class,					// STRING: AI Class: "random","assault","MG","sniper" or "unarmed" OR [_class,_launcherType]
 		_side 					// STRING: Only "bandit" is supported atm
 		_customGearSet			// (OPTIONAL) ARRAY: Manually defined AI gear. Refer to functional documentation of fn_SpawnAISoldier.sqf for more info: https://github.com/Defent/DMS_Exile/blob/master/%40ExileServer/addons/a3_dms/scripts/fn_SpawnAISoldier.sqf
-	] call IMS_fnc_SpawnAIGroup_MultiPos;
+	] call IMS_fnc_SpawnAIGroup_Patrol;
 
 	Returns AI Group
 */
@@ -26,6 +32,7 @@
 if !(params
 [
 	"_positions",
+	"_waypoints",
 	"_count",
 	"_difficulty",
 	"_class",
@@ -33,7 +40,7 @@ if !(params
 ])
 exitWith
 {
-	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_MultiPos with invalid parameters: %1",_this];
+	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_Patrol with invalid parameters: %1",_this];
 	grpNull
 };
 
@@ -41,28 +48,27 @@ private _positionsCount = count _positions;
 
 if (_positionsCount<1) exitWith
 {
-	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_MultiPos with an empty list of positions! _this: %1",_this];
+	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_Patrol with an empty list of positions! _this: %1",_this];
 	grpNull
 };
 
-private _directionsCount = count _directions;
+private _waypointsCount = count _waypoints;
 
-if (_directionsCount<1) exitWith
+if (_waypointsCount<1) exitWith
 {
-	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_MultiPos with an empty list of directions! _this: %1",_this];
+	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_Patrol with an empty list of waypoints! _this: %1",_this];
 	grpNull
 };
 
 if (_count < 1) exitWith
 {
-	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_MultiPos with less than 1 _count! _this: %1",_this];
+	diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGroup_Patrol with less than 1 _count! _this: %1",_this];
 	grpNull
 };
 
-
 if (IMS_DEBUG) then
 {
-	(format["SpawnAIGroup_MultiPos :: Spawning %1 %2 %3 AI at positions %4 with %5 difficulty.",_count,_class,_side,_positions,_difficulty]) call IMS_fnc_DebugLog;
+	(format["SpawnAIGroup_Patrol :: Spawning %1 %2 %3 AI at positions %4 with %5 difficulty.",_count,_class,_side,_positions,_difficulty]) call IMS_fnc_DebugLog;
 };
 
 
@@ -86,12 +92,10 @@ if (_class == "custom") then
 	}
 	else
 	{
-		diag_log format["IMS ERROR :: Calling IMS_fnc_SpawnAIGroup with custom class without defining _customGearSet! Setting _class to ""random"" _this: %1",_this];
+		diag_log format["IMS ERROR :: Calling IMS_fnc_SpawnAIGroup_Patrol with custom class without defining _customGearSet! Setting _class to ""random"" _this: %1",_this];
 		_class = "random";
 	};
 };
-
-
 
 private _group = createGroup (missionNamespace getVariable [format ["DMS_%1Side",_side],EAST]);
 
@@ -132,16 +136,31 @@ if (DMS_ai_use_launchers || {!(_launcherType isEqualTo "")}) then
 
 			if (IMS_DEBUG) then
 			{
-				(format["SpawnAIGroup_MultiPos :: Giving %1 a %2 launcher with %3 rockets",_unit,_launcher,DMS_AI_launcher_ammo_count]) call IMS_fnc_DebugLog;
+				(format["SpawnAIGroup_Patrol :: Giving %1 a %2 launcher with %3 rockets",_unit,_launcher,DMS_AI_launcher_ammo_count]) call IMS_fnc_DebugLog;
 			};
 		};
 	};
 };
 
-
+_group setCombatMode "RED";
+_group setBehaviour "AWARE";
 _group selectLeader ((units _group) select 0);
 
-[_group,_difficulty,"SAFE"] call IMS_fnc_SetGroupBehavior;
+// Remove all previous waypoints from group.
+for "_i" from count (waypoints _group) to 1 step -1 do
+{
+	deleteWaypoint ((waypoints _group) select _i);
+};
+
+// Add given waypoints to group.
+for "_i" from 0 to _waypointsCount do
+{
+	private _wp = _group addWaypoint [_waypoints select (_i % _waypointsCount),0];
+	_wp setWaypointType "MOVE";
+};
+
+_wp = _group addWaypoint [_waypoints select 0,0];
+_wp setWaypointType "CYCLE";
 
 // [WIP]
 // Add group to dynamic simulation system if option is true.
@@ -150,10 +169,8 @@ if (IMS_AI_DynamicSimulation) then
 	_group enableDynamicSimulation true;
 };
 
-_group enableDynamicSimulation true;											// Add group to dynamic sumulation system.
-
 _group setVariable ["DMS_LockLocality",false];									// Unlock locality now that we're done with the group
 
-diag_log format ["IMS_SpawnAIGroup_MultiPos :: Spawned %1 AI using positions parameter: %2.",_count,_positions];
+diag_log format ["IMS_SpawnAIGroup_Patrol :: Spawned %1 AI using positions parameter: %2.",_count,_positions];
 
 _group

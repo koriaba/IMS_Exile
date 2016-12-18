@@ -85,9 +85,10 @@ _difficulty =
 		};
 	};
 
-
+// Create dummy group for unit creation.	
+private _dummygroup = createGroup EAST;	
 //Create unit
-private _unit = _group createUnit [DMS_AI_Classname, _pos, [], 0,"FORM"];
+private _unit = _dummygroup createUnit [DMS_AI_Classname, _pos, [], 0,"FORM"];
 _unit allowFleeing 0;
 _unit allowDamage false;
 
@@ -443,8 +444,10 @@ if (IMS_DEBUG) then
 	(format ["SpawnAISoldier :: Spawned a %1 %2 %6 AI at %3 with %4 difficulty carrying %7 poptabs to group %5",_class,_side,_pos,_difficulty,_group,_type,_AIMoney]) call IMS_fnc_DebugLog;
 };
 
-_unit allowDamage true;
 [_unit] joinSilent _group;
 _unit setUnitPos "UP";
+_unit allowDamage true;
+
+deleteGroup _dummygroup;
 
 _unit

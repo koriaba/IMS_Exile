@@ -6,6 +6,7 @@
 
 /* --- Mission System Settings --- */
 	IMS_MissionLogs 						= true;	// Enable or disable IMS log messages.
+	IMS_AI_DynamicSimulation				= false; // Enable Arma 3 dynamic simulation support for IMS.
 	
 	/* --- The Fortress Mission Settings --- */
 	/* --- TANOA AND CHERNARUS MAP ONLY --- */
@@ -41,10 +42,13 @@
 
 /* DO NOT EDIT BELOW THIS LINE IF YOU DONT KNOW WHAT YOU ARE DOING! */
 
-// Enable the Dynamic Simulation system.
-enableDynamicSimulation true;
-// Sets activation Dynamic Simulation distance for given group category.
-"Group" setDynamicSimulationDistance 50;
+if (IMS_AI_DynamicSimulation) then 
+{
+	// Enable the Dynamic Simulation system.
+	enableDynamicSimulation true;
+	// Sets activation Dynamic Simulation distance for given group category.
+	"Group" setDynamicSimulationDistance 50;
+};
 
 
 // Add public Variables to Server enviroment.
