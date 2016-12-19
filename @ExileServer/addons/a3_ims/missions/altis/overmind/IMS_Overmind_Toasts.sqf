@@ -5,6 +5,14 @@
 	
     Description: Toast notifications for the fortress mission.  
 */
+IMS_Overmind_Toast_MissionComplete = {
+	["SuccessTitleAndText", ["<t color='#06ff00' align='center' font='PuristaSemiBold'>MISSION COMPLETE</t>", format ["<t color='#ffe400'><img align='center' image='textures\win.paa' size='80'/></t><br/><br/><t color='#06ff00' font='PuristaSemiBold'>The datas has been saved and the bandits are dead.<br/>Mission completed!</t>"]]] call ExileClient_gui_toaster_addTemplateToast;
+};
+
+IMS_Overmind_Toast_Gate = {
+	_pinCode = _this select 0;
+	["SuccessTitleAndText", ["<t color='#f07700' align='center' font='PuristaSemiBold'>Exit Gate</t>", format ["<t color='#f07700' font='PuristaSemiBold'>The main exit gate is still locked. the acces code is: %1</t>", _pinCode]]] call ExileClient_gui_toaster_addTemplateToast;
+};
 IMS_Overmind_Toast2_Terminal = {
 	["SuccessTitleAndText", ["<t color='#a0df3b' font='PuristaSemiBold'>Interaction</t>", format ["<t color='#fbfcfe' font='PuristaSemiBold'>Transfer complete!</t>"]]] call ExileClient_gui_toaster_addTemplateToast;
 };

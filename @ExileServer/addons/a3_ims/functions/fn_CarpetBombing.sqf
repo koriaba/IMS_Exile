@@ -55,8 +55,8 @@ sleep random [20,30,40];
 _randomsound = selectRandom ["BattlefieldJet1_3D","BattlefieldJet2_3D","BattlefieldJet3_3D"];
 
 if (player distance _bomblocation < 1500) then {
-
-	playsound _randomsound;
+	_playerUnits = _bomblocation nearEntities ["Exile_Unit_Player", 250];
+	[_randomsound, 0] remoteExec ["BIS_fnc_playSound", _playerUnits, true];
 
 	_soundsleep = getnumber (configfile >> "CfgSounds" >> _randomsound >> "duration");
 

@@ -17,7 +17,6 @@ IMS_Fortress_TaskEvent_1 = {
 
 IMS_Fortress_TaskEvent_1_End = {
 	IMS_Fortress_Task_1 setTaskState "Succeeded";
-	player setVariable ["fortressTask_1",0];
 };
 
 IMS_Fortress_TaskEvent_2 = {
