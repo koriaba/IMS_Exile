@@ -1,18 +1,19 @@
 /*
-	IMS_fnc_SpawnAISoldier
-	Created by eraser1 and modified by Salutesh
+	IMS_fnc_SpawnAIGuard
+	Created by eraser1
 	Based off of WAI
 
 	Usage:
 	[
-		_group,					// GROUP: Group the AI will belong to
-		_pos,					// ARRAY (positionATL): Position of AI
+		_group,					// GROUP: Group the AI will belong to.
+		_pos,					// ARRAY (positionATL): Position of AI.
+		_dir,					// NUMBER: Facing direction of AI.
 		_class,					// STRING: Classname: "random","assault","MG","sniper" or "unarmed". Use "custom" to use "_customGearSet"
 		_difficulty,			// STRING: Difficulty: "random","static","hardcore","difficult","moderate", or "easy"
 		_side, 					// STRING: "bandit" only by default
 		_type,					// STRING: Type of AI: "soldier","static","vehicle","heli", etc.
 		_customGearSet			// (OPTIONAL) ARRAY: Manually defined AI gear.
-	] call IMS_fnc_SpawnAISoldier;
+	] call IMS_fnc_SpawnAIGuard;
 
 	Usage for _customGearSet:
 	[
@@ -39,6 +40,7 @@ if !(params
 [
 	"_group",
 	"_pos",
+	"_dir",
 	"_class",
 	"_difficulty",
 	"_side",
@@ -46,7 +48,7 @@ if !(params
 ])
 then
 {
-	diag_log format ["IMS ERROR :: IMS_SpawnAISoldier called with invalid parameters: %1",_this];
+	diag_log format ["IMS ERROR :: IMS_SpawnAIGuard called with invalid parameters: %1",_this];
 }
 else
 {
@@ -139,7 +141,7 @@ if (_customGearSet isEqualTo []) then
 {
 	if !(_class in DMS_ai_SupportedClasses) exitWith
 	{
-		diag_log format ["IMS ERROR :: IMS_SpawnAISoldier called with unsupported _class: %1 | _this: %2",_class,_this];
+		diag_log format ["IMS ERROR :: IMS_SpawnAIGuard called with unsupported _class: %1 | _this: %2",_class,_this];
 		deleteVehicle _unit;
 	};
 
@@ -247,7 +249,7 @@ else
 	])
 	then
 	{
-		diag_log format ["IMS ERROR :: Calling IMS_SpawnAISoldier with invalid _customGearSet: %1 | _this: %2",_customGearSet,_this];
+		diag_log format ["IMS ERROR :: Calling IMS_SpawnAIGuard with invalid _customGearSet: %1 | _this: %2",_customGearSet,_this];
 	};
 
 	if (IMS_DEBUG) then
@@ -448,6 +450,10 @@ if (IMS_DEBUG) then
 [_unit] joinSilent _group;
 
 _unit setUnitPos "UP";
+_unit setPos _pos;
+_unit setDir _dir;
+doStop _unit;
+
 _unit allowDamage true;
 
 deleteGroup _dummygroup;

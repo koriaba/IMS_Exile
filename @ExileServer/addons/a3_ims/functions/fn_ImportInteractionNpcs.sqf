@@ -56,6 +56,10 @@ private _npcs = _export apply
 	
 	_npc = _npcClassName createVehicle _position;
 	_npc setDir _direction;
+	{_npc removeWeaponGlobal _x;} forEach (weapons _npc);
+	{_npc unlinkItem _x;} forEach (assignedItems _npc);
+	{_npc removeItem _x;} forEach (items _npc);
+	removeAllItemsWithMagazines _npc;
 	_npc setVariable ["BIS_enableRandomization", false];
 	_npc setVariable ["BIS_fnc_animalBehaviour_disable", true];
 	_npc disableAI "ANIM";

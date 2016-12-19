@@ -2,7 +2,6 @@
 	IMS_fnc_SpawnAIGroup_MultiPos
 	Created by eraser1 and modified by Salutesh
 
-
 	Spawns a group of AI with a given AI count at the provided list of location(s), with a given difficulty, class, and side.
 
 	Usage:
@@ -95,7 +94,8 @@ if (_class == "custom") then
 
 private _group = createGroup (missionNamespace getVariable [format ["DMS_%1Side",_side],EAST]);
 
-_group setVariable ["DMS_LockLocality",true];									// Lock locality until all units are spawned
+// Lock locality until all units are spawned
+_group setVariable ["DMS_LockLocality",true];
 _group setVariable ["DMS_SpawnedGroup",true];
 _group setVariable ["DMS_Group_Side", _side];
 
@@ -150,9 +150,8 @@ if (IMS_AI_DynamicSimulation) then
 	_group enableDynamicSimulation true;
 };
 
-_group enableDynamicSimulation true;											// Add group to dynamic sumulation system.
-
-_group setVariable ["DMS_LockLocality",false];									// Unlock locality now that we're done with the group
+// Unlock locality now that we're done with the group
+_group setVariable ["DMS_LockLocality",false];
 
 diag_log format ["IMS_SpawnAIGroup_MultiPos :: Spawned %1 AI using positions parameter: %2.",_count,_positions];
 

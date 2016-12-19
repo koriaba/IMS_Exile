@@ -39,7 +39,7 @@ _animationCount = count _animations;
 if (_animationCount > 1) then
 {
 	_npc setVariable ["IMS_Animations", _animations];
-	_npc addEventHandler ["AnimDone", {_this call IMS_fnc_InteractionNpcOnAnimationDone}];
+	_npc addEventHandler ["AnimDone", {[_this] remoteExec ["IMS_fnc_InteractionNpcOnAnimationDone", 0, true]}];
 };
 
 [_npc, _holdActionTitle, _holdActionIcon, "_this distance _target < 5", _holdActionEvent, [], 2, true] call IMS_fnc_AddHoldAction;
