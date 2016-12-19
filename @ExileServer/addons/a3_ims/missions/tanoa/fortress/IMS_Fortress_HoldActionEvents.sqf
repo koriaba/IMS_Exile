@@ -39,6 +39,7 @@ IMS_Fortress_Terminal_ActionScript = {
 	sleep 10;
 	// Completion Event.
 	[] call IMS_Fortress_DMSCompletionEvent;
+	sleep 3;
 	// Spawn vehicle loot if option in config is true.
 	if (IMS_Fortress_VehicleLoot) then {
 		// Create vehicle.

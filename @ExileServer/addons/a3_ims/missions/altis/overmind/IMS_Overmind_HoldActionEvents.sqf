@@ -36,17 +36,19 @@ IMS_Overmind_Terminal_ActionScript2 = {
 	// Start timer
 	[IMS_Overmind_Timer] remoteExec ["IMS_fnc_EndTimer", _playerUnits, true];
 	sleep IMS_Overmind_Timer;
-	// Bomb area.
-	//[[16060,16962.4,0],20,100,240] call IMS_fnc_CarpetBombing;
-	sleep 10;
-	// Completion Event.
-	[] call IMS_Overmind_DMSCompletionEvent;
+	[] remoteExec ["IMS_Overmind_JetSoundEvent", _playerUnits, true];
 	sleep 3;
+	// Start bombing.
+	[] remoteExec ["IMS_Overmind_BombEvent", 0, true];
+	sleep 20;
 	// Complete the tenth mission task.
 	[] remoteExec ["IMS_Overmind_TaskEvent_10_End", _playerUnits, true];
 	// Notifiy player with toast.
 	[] remoteExec ["IMS_Overmind_Toast_MissionComplete", _playerUnits, true];
-	sleep 5;
+	sleep 10;
+	// Completion Event.
+	[] call IMS_Overmind_DMSCompletionEvent;
+	sleep 3;
 	// Spawn vehicle loot if option in config is true.
 	if (IMS_Overmind_VehicleLoot) then {
 		// Create vehicle.
@@ -290,9 +292,8 @@ IMS_Overmind_Npc_ActionScript = {
 	[] remoteExec ["IMS_Overmind_TaskEvent_1", _playerUnits, true];
 	// Notify player with toast.
 	[] remoteExec ["IMS_Toast_NewTask", _playerUnits, true];
-	sleep 3;
+	sleep 5;
 	[[[15939.3,16993.6,0],[15939.2,16995.3,0]],[[15939.3,16993.6,0],[15925.9,16994.3,0],[15913.7,17011,0],[15899.6,17005.2,0],[15898.3,16972.9,0],[15914.3,16962.4,0],[15926.1,16993.1,0]],2,_difficulty,"assault",_side] call IMS_fnc_SpawnAIGroup_Patrol;
-	sleep 1;
 	IMS_ScriptObject_OvermindGate1 setVariable ["ExileIsLocked", 0, true];
 	IMS_ScriptObject_OvermindGate1 animate ["DoorRotationLeft", 1];
 	IMS_ScriptObject_OvermindGate1 animate ["DoorRotationRight", 1];

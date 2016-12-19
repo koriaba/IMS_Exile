@@ -24,5 +24,9 @@
 	["Land_TripodScreen_01_large_F", [16007.2, 16913.7, 15.3933], [0.932568, -0.360994, 0], [0, 0, 1], false, "OvermindMainScreen"],
 	["Land_DataTerminal_01_F", [16012.2, 16916.3, 15.174], [0.408161, 0.91291, 0], [0, 0, 1], false, "OvermindTerminal"],
 	["Exile_Construction_ConcreteGate_Static", [15932.4, 16993.6, 14.2023], [0.918743, 0.394856, 0], [0, 0, 1], false, "OvermindGate1"],
-	["Exile_Construction_ConcreteGate_Static", [15986.3, 17059, 13.7242], [0.893144, -0.449746, -0.00482676], [-0.00265204, -0.0159975, 0.999869], false, "OvermindGate2"]
+	["Exile_Construction_ConcreteGate_Static", [15986.3, 17059, 13.7242], [0.893144, -0.449746, -0.00482676], [-0.00265204, -0.0159975, 0.999869], false, "OvermindGate2"],
+	["Land_Loudspeakers_F", [15984.1, 17004.8, 17.1446], [0, 1, 0], [0, 0, 1], false, "OvermindSpeaker1"],
+	["Land_Loudspeakers_F", [16194.8, 16994.4, 16.8314], [0, 1, 0], [0, 0, 1], false, "OvermindSpeaker2"],
+	["Land_Loudspeakers_F", [16047.4, 16866.3, 17.1792], [0, 1, 0], [0, 0, 1], false, "OvermindSpeaker3"],
+	["Land_Loudspeakers_F", [16084.9, 17000.6, 19.3398], [0, 1, 0], [0, 0, 1], false, "OvermindSpeaker4"]
 ]

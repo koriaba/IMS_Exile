@@ -31,6 +31,70 @@ IMS_ScriptObject_OvermindGate2 setVariable ["ExileAccessCode", _pinCodeString];
 IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsPersistent", true];
 IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsSimulationMonitored", true];
 
+// Alarm Sound
+IMS_Overmind_AlarmEvent = {
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+	sleep 10;
+	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
+};
+
+IMS_Overmind_JetSoundEvent = {
+	playSound "BattlefieldJet1_3D";
+	sleep 0.5;
+	playSound "BattlefieldJet2_3D";
+	sleep 0.5;
+	playSound "BattlefieldJet3_3D";
+};
+
+// Bombing Event
+IMS_Overmind_BombEvent = {
+	[[15974.2,17038.6,0],50,5,2] remoteExec ["IMS_fnc_EndBombing",0,true];
+	sleep 5;
+	[[16059.2,17090.9,0],50,5,2] remoteExec ["IMS_fnc_EndBombing",0,true];	
+	sleep 5;
+	[[16154,17057.7,0],50,5,2] remoteExec ["IMS_fnc_EndBombing",0,true];	
+	sleep 5;
+	[[16125.2,16962.9,0],50,5,2] remoteExec ["IMS_fnc_EndBombing",0,true];
+	sleep 5;
+	[[16074.7,16877.4,0],50,5,2] remoteExec ["IMS_fnc_EndBombing",0,true];
+	sleep 5;
+	[[16009.6,16951.4,0],50,5,2] remoteExec ["IMS_fnc_EndBombing",0,true];
+};
+
 // DMS Mission Handling
 IMS_Overmind_DMSCompletionEvent = {
 	// End the DMS mission The Fortress after raid event completion.
