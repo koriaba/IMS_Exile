@@ -36,14 +36,16 @@ And if you want the Helicopter reinforcements in the Mission:
 DMS_AllowStaticReinforcements 		= true; // Whether or not static missions will receive reinforcements. This will simply disable the calling of GroupReinforcementsMonitor;
 ```
 
-- Open the DMS map_configs directory and edit the tanoa_config.sqf:
+- Open the DMS map_configs directory and edit the following lines in the YOUR_SERVERS_MAP_config.sqf:
 ```
 DMS_StaticMissionsOnServerStart append
 [
-    "underwater_stash",
-    "raid_fortress"
+	"MY_IMS_MISSON_FILE_NAME",
+    "underwater_stash"
 ];
 ```
+Current available IMS missions are: "IMS_overmind_altis", "IMS_fortress_tanoa", "IMS_fortress_chernarus".
+Let DMS always load the IMS related missions first!
 
 - Repack a3_dms with a PBO tool (PBO Manager, Eliteness, or the Arma 3 Tools suite).
 - Put the generated PBO in your "@ExileServer\addons\" directory.
@@ -51,7 +53,7 @@ DMS_StaticMissionsOnServerStart append
 
 ####BattlEye Filters:
 Please note that you may have to add more filters because i dont had the time yet to filter all BE restrictions out.
-Feel free to post your own made filters for this work to complete the list .
+Feel free to post your own made filters for this work to complete the list.
 
 [scripts.txt]
 ```
