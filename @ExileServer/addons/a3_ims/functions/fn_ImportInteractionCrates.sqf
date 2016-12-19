@@ -62,8 +62,8 @@ private _crates = _export apply
 	_crate setVariable ["ExileIsLocked", -1,true];
 	_crate call ExileServer_system_simulationMonitor_addVehicle;
 	// Add items to crates.
-	_weaponLoot = selectRandom ["SMG_05_F","hgun_PDW2000_F","hgun_ACPC2_F","hgun_P07_F","arifle_ARX_ghex_F","hgun_Pistol_heavy_02_F","hgun_Rook40_F","arifle_MXC_khk_F"];
-	_medecineLoot = selectRandom ["Exile_Item_InstaDoc","Exile_Item_Bandage"];
+	_weaponLoot = selectRandom IMS_SupplyWeapons;
+	_medecineLoot = selectRandom IMS_SupplyMedics;
 	_magazineLoot = selectRandom (getArray (configFile >> "CfgWeapons" >> _weaponLoot >> "magazines"));
 	_crate addWeaponCargoGlobal [_weaponLoot, 1];
 	_crate addMagazineCargoGlobal [_magazineLoot, (1 + floor(random 3))];

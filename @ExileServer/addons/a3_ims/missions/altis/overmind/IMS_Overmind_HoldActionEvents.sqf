@@ -27,21 +27,26 @@ IMS_Overmind_Terminal_ActionScript2 = {
 	// Notify player with toast.
 	[] remoteExec ["IMS_Toast_TaskUpdate", _playerUnits, true];
 	sleep 3;
-	// Notify main exit gate code.
-	[IMS_Overmind_ExitCode] remoteExec ["IMS_Overmind_Toast_Gate", _playerUnits, true];
+	// Open main exit gate code.
+	IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsLocked", 0, true];
+	IMS_ScriptObject_OvermindGate2 animate ["DoorRotationLeft", 1];
+	IMS_ScriptObject_OvermindGate2 animate ["DoorRotationRight", 1];
+	// Place map marker on exit position.
+	[[15986.3,17059,0], "ExileHeart", "IMS", "EXIT"] call IMS_fnc_CreateMarker;
 	// Start timer
 	[IMS_Overmind_Timer] remoteExec ["IMS_fnc_EndTimer", _playerUnits, true];
 	sleep IMS_Overmind_Timer;
 	// Bomb area.
-	[[16060,16962.4,0],20,200,240] call IMS_fnc_CarpetBombing;
+	//[[16060,16962.4,0],20,100,240] call IMS_fnc_CarpetBombing;
 	sleep 10;
 	// Completion Event.
 	[] call IMS_Overmind_DMSCompletionEvent;
+	sleep 3;
 	// Complete the tenth mission task.
 	[] remoteExec ["IMS_Overmind_TaskEvent_10_End", _playerUnits, true];
 	// Notifiy player with toast.
 	[] remoteExec ["IMS_Overmind_Toast_MissionComplete", _playerUnits, true];
-	sleep 10;
+	sleep 5;
 	// Spawn vehicle loot if option in config is true.
 	if (IMS_Overmind_VehicleLoot) then {
 		// Create vehicle.
@@ -201,12 +206,8 @@ IMS_Overmind_Unlock_ActionScript = {
 	private _playerUnits = ([16060,16962.4,0] nearEntities ["Exile_Unit_Player", 250]);
 	// Define resarch terrain building.
 	private _researchBuilding = ((nearestobjects [[16017.2,17042,-0.0274544], ["Land_Dome_Big_F"], 50]) select 0);
-	// Complete the second mission task.
-	[] remoteExec ["IMS_Overmind_TaskEvent_2_End", _playerUnits, true];
-	// Create the third mission task.
-	[] remoteExec ["IMS_Overmind_TaskEvent_3", _playerUnits, true];
 	// Notify player with toast.
-	[] remoteExec ["IMS_Toast_TaskUpdate", _playerUnits, true];
+	[] remoteExec ["IMS_Overmind_Toast_Unlocked", _playerUnits, true];
 	// Open the building doors.
 	_researchBuilding animateSource ["Door_2_source", 1];
 	_researchBuilding animateSource ["Door_3_source", 1];
@@ -217,8 +218,13 @@ IMS_Overmind_Unlock_ActionScript = {
 	_researchBuilding setVariable ["bis_disabled_Door_3" , 0, true];
 	//IMS_ScriptObject_OvermindKeypad1 setVariable ["ExileIsLocked", 0, true];
 	//IMS_ScriptObject_OvermindKeypad2 setVariable ["ExileIsLocked", 0, true];
+	sleep 3;
+	// Complete the second mission task.
+	[] remoteExec ["IMS_Overmind_TaskEvent_2_End", _playerUnits, true];
+	// Create the third mission task.
+	[] remoteExec ["IMS_Overmind_TaskEvent_3", _playerUnits, true];
 	// Notify player with toast.
-	[] remoteExec ["IMS_Overmind_Toast_Unlocked", _playerUnits, true];
+	[] remoteExec ["IMS_Toast_TaskUpdate", _playerUnits, true];
 };
 
 IMS_Overmind_Lock_ActionScript = {
@@ -247,6 +253,9 @@ IMS_Overmind_Tablet_ActionScript = {
 	[IMS_ScriptObject_OvermindTablet, 0] remoteExec ["bis_fnc_holdActionRemove", 0, true];
 	// Delete the tablet object.
 	deleteVehicle IMS_ScriptObject_OvermindTablet;
+	// Notify player with toast.
+	[] remoteExec ["IMS_Overmind_Toast_Tablet", _playerUnits, true];
+	sleep 3;
 	// Complete the first mission task.
 	[] remoteExec ["IMS_Overmind_TaskEvent_1_End", _playerUnits, true];
 	// Create the second mission task.
@@ -265,8 +274,6 @@ IMS_Overmind_Tablet_ActionScript = {
 	// Add hold action to research laptop object.
 	[IMS_ScriptObject_OvermindLaptop, "Get research data", "hack", "_this distance _target < 5", {remoteExec ["IMS_Overmind_Laptop_ActionScript1", 0, true];},[], 2, true] call IMS_fnc_AddHoldAction;
 	IMS_ScriptObject_OvermindLaptop setObjectTextureGlobal [0, "textures\exile_os.jpg"];
-	// Notify player with toast.
-	[] remoteExec ["IMS_Overmind_Toast_Tablet", _playerUnits, true];
 };
 
 IMS_Overmind_Npc_ActionScript = {

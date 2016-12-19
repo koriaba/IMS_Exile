@@ -84,7 +84,7 @@ try
 	deleteVehicle _parachute;
 	_lootCrate allowDamage true;
 	sleep 0.1;
-	[position _lootCrate, "IMS", _markerName] call IMS_fnc_CreateMarker;
+	[position _lootCrate, "ExileHeart", "IMS", _markerName] call IMS_fnc_CreateMarker;
 }
 catch
 {

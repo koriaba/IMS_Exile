@@ -23,11 +23,13 @@ _researchBuilding setVariable ["bis_disabled_Door_3" , 1, true];
 IMS_ScriptObject_OvermindGate1 setVariable ["ExileIsLocked", -1, true];
 IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsLocked", -1, true];
 // Give exit gate code.
-private _pinCode = (1000 +(round (random 8999)));
-private _pinCodeString = format ["0%1",_pinCode];
+_pinCode = (1000 +(round (random 8999)));
+_pinCodeString = format ["0%1",_pinCode];
 IMS_Overmind_ExitCode = _pinCode;
 publicVariable "IMS_Overmind_ExitCode";
 IMS_ScriptObject_OvermindGate2 setVariable ["ExileAccessCode", _pinCodeString];
+IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsPersistent", true];
+IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsSimulationMonitored", true];
 
 // DMS Mission Handling
 IMS_Overmind_DMSCompletionEvent = {
