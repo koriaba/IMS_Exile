@@ -31,11 +31,11 @@ class CfgFunctions
 		{
 			file = "\x\addons\ims\functions";
 			class AddHoldAction 								{};
+			class CarpetBombing									{};
 			class CreateMarker									{};	
 			class DebugLog										{};
 			class EndBombing 									{};
 			class HideTerrainObject								{};
-			class FillSupplyBox 								{};
 			class ImportFromExileEdenPlugin 					{};
 			class ImportFromExileEdenPluginInteraction 			{};
 			class ImportFromExileEdenPluginScripted 			{};

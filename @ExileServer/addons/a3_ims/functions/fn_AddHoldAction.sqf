@@ -3,6 +3,8 @@
 	Created by Salutesh
 
 	This function will simply reduce the amount of parameters that are needed to execute the BIS_fnc_holdActionAdd function.
+	This function will create a hold action with given parameters to the given target.
+	Target can be a object, npc or vehicle (nothing else tested yet).
 	
 	Usage:
 	[
@@ -16,8 +18,6 @@
 		_remove															// [BOOLEAN]: Remove the action on completion. true = yes / false = no
 	] call IMS_fnc_AddHoldAction;
 	
-	This function will create a hold action with given parameters to the given target.
-	Target can be a object, npc or vehicle (nothing else tested yet),
 */
 params [["_object", player], ["_label", "Search"], ["_type", "search"], ["_active", "true"], ["_completeCode", {hint 'Nothing found'}], ["_args", []], ["_duration", 2], ["_remove", "true"]];
 

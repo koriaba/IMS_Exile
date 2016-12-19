@@ -22,5 +22,7 @@
 	["Land_TripodScreen_01_dual_v1_F", [16007.3, 16911.9, 15.1592], [0.918815, 0.394687, 0], [0, 0, 1], false, "OvermindScreen1"],
 	["Land_TripodScreen_01_dual_v2_F", [16008.6, 16915, 15.1964], [0.282985, -0.959124, 0], [0, 0, 1], false, "OvermindScreen2"],
 	["Land_TripodScreen_01_large_F", [16007.2, 16913.7, 15.3933], [0.932568, -0.360994, 0], [0, 0, 1], false, "OvermindMainScreen"],
-	["Land_DataTerminal_01_F", [16011.8, 16916.6, 15.174], [0.364342, 0.931265, 0], [0, 0, 1], false, "OvermindTerminal"]
+	["Land_DataTerminal_01_F", [16012.2, 16916.3, 15.174], [0.408161, 0.91291, 0], [0, 0, 1], false, "OvermindTerminal"],
+	["Exile_Construction_ConcreteGate_Static", [15932.4, 16993.6, 14.2023], [0.918743, 0.394856, 0], [0, 0, 1], false, "OvermindGate1"],
+	["Exile_Construction_ConcreteGate_Static", [15986.3, 17059, 13.7242], [0.893144, -0.449746, -0.00482676], [-0.00265204, -0.0159975, 0.999869], false, "OvermindGate2"]
 ]

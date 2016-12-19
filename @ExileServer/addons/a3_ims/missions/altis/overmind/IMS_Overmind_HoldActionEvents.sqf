@@ -19,6 +19,12 @@ IMS_Overmind_Terminal_ActionScript2 = {
 	[IMS_ScriptObject_OvermindTerminal,"red","red","red"] call BIS_fnc_DataTerminalColor;
 	// Notify player with toast.
 	[] remoteExec ["IMS_Overmind_Toast2_Terminal", _playerUnits, true];
+	// Start timer
+	[IMS_Overmind_Timer] remoteExec ["IMS_fnc_EndTimer", _playerUnits, true];
+	//[] remoteExec ["IMS_Overmind_AlarmEvent", -2, true];
+	sleep IMS_Overmind_Timer;
+	// Bomb area.
+	[[16060,16962.4,0],20,200,360] call IMS_fnc_CarpetBombing;
 };
 
 IMS_Overmind_Terminal_ActionScript1 = {
@@ -195,4 +201,10 @@ IMS_Overmind_Npc_ActionScript = {
 	sleep 3;
 	// Notify player with toast.
 	[] remoteExec ["IMS_Toast_NewTask", _playerUnits, true];
+	sleep 3;
+	[[[15939.3,16993.6,0],[15939.2,16995.3,0]],[[15939.3,16993.6,0],[15925.9,16994.3,0],[15913.7,17011,0],[15899.6,17005.2,0],[15898.3,16972.9,0],[15914.3,16962.4,0],[15926.1,16993.1,0]],2,_difficulty,"assault",_side] call IMS_fnc_SpawnAIGroup_Patrol;
+	sleep 1;
+	IMS_ScriptObject_OvermindGate1 setVariable ["ExileIsLocked", 0, true];
+	IMS_ScriptObject_OvermindGate1 animate ["DoorRotationLeft", 1];
+	IMS_ScriptObject_OvermindGate1 animate ["DoorRotationRight", 1];
 };

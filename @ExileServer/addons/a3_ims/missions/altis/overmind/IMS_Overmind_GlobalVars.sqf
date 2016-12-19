@@ -19,4 +19,6 @@ private _researchBuilding = ((nearestobjects [[16017.2,17042,-0.0274544], ["Land
 _researchBuilding setVariable ["bis_disabled_Door_1" , 1, true];
 _researchBuilding setVariable ["bis_disabled_Door_2" , 1, true];
 _researchBuilding setVariable ["bis_disabled_Door_3" , 1, true];
-
+// Lock area gates.
+IMS_ScriptObject_OvermindGate1 setVariable ["ExileIsLocked", -1, true];
+IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsLocked", -1, true];

@@ -20,7 +20,7 @@ try
 	if !(params
 	[
 		"_position",
-		"_markerType"
+		"_markerType",
 		"_markerLabel",
 		"_markerName"
 	])
