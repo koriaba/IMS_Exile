@@ -10,8 +10,8 @@ class CfgPatches
 	{
 		units[] = {};
 		weapons[] = {};
-		a3_IMS_version = "December 5, 2016";
-		requiredVersion = 1.64;
+		a3_IMS_version = "December 19, 2016";
+		requiredVersion = 1.66;
 		requiredAddons[] = {"exile_client","exile_server_config","a3_dms"};
 	};
 };
@@ -47,8 +47,10 @@ class CfgFunctions
 			class InteractionNpcOnAnimationDone 				{};
 			class LootDrop 										{};
 			class SetGroupBehavior								{};
+			class SpawnAIGroup_Guards							{};
 			class SpawnAIGroup_Patrol							{};
 			class SpawnAIGroup_MultiPos							{};
+			class SpawnAIGuard									{};
 			class SpawnAISoldier								{};
 			class SpawnNonPersistentVehicle						{};
 			class SpawnPersistentVehicle						{};
