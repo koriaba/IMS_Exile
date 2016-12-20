@@ -452,7 +452,6 @@ if (IMS_DEBUG) then
 _unit setUnitPos "UP";
 _unit setPos _pos;
 _unit setDir _dir;
-doStop _unit;
 
 _unit allowDamage true;
 

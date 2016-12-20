@@ -147,11 +147,16 @@ _group setCombatMode "RED";
 _group setBehaviour "AWARE";
 _group selectLeader ((units _group) select 0);
 
+
 // Remove all previous waypoints from group.
 for "_i" from count (waypoints _group) to 1 step -1 do
 {
 	deleteWaypoint ((waypoints _group) select _i);
 };
+
+createGuardedPoint [EAST, _positions select 0, -1, objNull];
+_wp = _group addWaypoint [_positions select 0,0];
+_wp setWaypointType "GUARD";
 
 // [WIP]
 // Add group to dynamic simulation system if option is true.

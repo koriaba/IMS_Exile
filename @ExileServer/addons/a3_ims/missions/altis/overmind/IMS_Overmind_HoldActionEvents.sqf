@@ -32,12 +32,13 @@ IMS_Overmind_Terminal_ActionScript2 = {
 	IMS_ScriptObject_OvermindGate2 animate ["DoorRotationLeft", 1];
 	IMS_ScriptObject_OvermindGate2 animate ["DoorRotationRight", 1];
 	// Place map marker on exit position.
-	[[15986.3,17059,0], "ExileHeart", "IMS", "EXIT"] call IMS_fnc_CreateMarker;
+	[[15986.3,17059,0], "hd_arrow", "IMS", "EXIT"] call IMS_fnc_CreateMarker;
 	// Start timer
 	[IMS_Overmind_Timer] remoteExec ["IMS_fnc_EndTimer", _playerUnits, true];
+	[] remoteExec ["IMS_Overmind_AlarmEvent", -2, true];
 	sleep IMS_Overmind_Timer;
 	[] remoteExec ["IMS_Overmind_JetSoundEvent", _playerUnits, true];
-	sleep 3;
+	sleep 5;
 	// Start bombing.
 	[] remoteExec ["IMS_Overmind_BombEvent", 0, true];
 	sleep 20;
@@ -48,13 +49,14 @@ IMS_Overmind_Terminal_ActionScript2 = {
 	sleep 10;
 	// Completion Event.
 	[] call IMS_Overmind_DMSCompletionEvent;
-	sleep 3;
+	sleep 10;
 	// Spawn vehicle loot if option in config is true.
 	if (IMS_Overmind_VehicleLoot) then {
 		// Create vehicle.
 		private _pinCode = (1000 +(round (random 8999)));
 		[IMS_Overmind_VehicleLootClass, [15871,16989.2,0], 150, _pinCode, "Overmind Vehicle"] call IMS_fnc_SpawnPersistentVehicle;
 	};
+	sleep 3;
 	// Spawn mission loot drop.
 	[[15871,16989.2,0], "B_supplyCrate_F", "Overmind Loot"] call IMS_fnc_LootDrop;
 };

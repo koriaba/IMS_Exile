@@ -35,11 +35,16 @@ _group5 = [[[16015.7,17113.9,0],[16014,17115.1,0],[16015.8,17116,0]],[[16015.1,1
 _group6 = [[[16038,17119,3.09179],[16032.7,17123.9,3.04245],[16043.7,17123.4,3.15075]],[187.115,240.548,112.673],3,_difficulty,"random",_side] call IMS_fnc_SpawnAIGroup_Guards;
 _group7 = [[[16065.9,17134.1,0],[16082.9,17133.7,0]],[197.285,239.343],2,_difficulty,"random",_side] call IMS_fnc_SpawnAIGroup_Guards;
 _group8 = [[[16216.1,17038.2,0],[16218.6,17038.7,0],[16215.9,17035.1,0],[16218.6,17035.8,0]],[[16216.6,17037.8,0],[16178.3,17074.8,0],[16161.9,17099.1,0],[16111.6,17115,0],[16101.2,17128.4,0],[16079.6,17115.6,0],[16111.6,17115,0],[16161.9,17099.1,0],[16200.3,17036.9,0],[16206.9,17025.5,0]],4,_difficulty,"assault",_side] call IMS_fnc_SpawnAIGroup_Patrol;
+_group9 = [[[16186.3,16995.7,0],[16185.1,17011.4,0]],[41.319,133.823],2,_difficulty,"random",_side] call IMS_fnc_SpawnAIGroup_Guards;
+_group10 = [[[16138.4,17009.4,0],[16140.3,16993.9,0]],[143.802,24.954],2,_difficulty,"random",_side] call IMS_fnc_SpawnAIGroup_Guards;
+_group11 = [[[15983.1,16968.1,0],[15982.6,16969.6,0],[15984.5,16969.4,0]],[[15983.3,16968.8,0],[15995.7,16924.5,0],[16043.7,16922.2,0],[16062.4,16958.8,0],[16047.4,16973.7,0],[16040.4,16996.4,0],[16048.3,17025.8,0],[16063.6,17041,0],[16084.7,17047.5,0],[16101.4,17042.5,0],[16113.5,17034.5,0],[16120.5,17024.5,0],[16127.8,17002.2,0],[16122.4,16976.5,0],[16108.4,16961.4,0],[16083.8,16952.4,0],[16063.3,16958.4,0],[16043.7,16922.4,0],[15995.7,16924.7,0]],3,_difficulty,"assault",_side] call IMS_fnc_SpawnAIGroup_Patrol;
+_group12 = [[[16072.2,16844.3,0],[16070.3,16844.9,0],[16071.1,16843.1,0]],[[16072.2,16844.3,0],[16054,16865.5,0],[16055.7,16879.8,0],[16068,16882,0],[16080.3,16875.9,0],[16080.4,16861.7,0]],3,_difficulty,"assault",_side] call IMS_fnc_SpawnAIGroup_Patrol;
+_group13 = [[[16103,16874.6,0],[16098.3,16874.1,0],[16099.1,16861.7,0]],[187.052,115.565,270],3,_difficulty,"random",_side] call IMS_fnc_SpawnAIGroup_Guards;
 
 // Define mission-spawned AI Units
 _missionAIUnits =
 [
-	[_group1,_group2,_group3,_group4,_group5,_group6,_group7,_group8]
+	[_group1,_group2,_group3,_group4,_group5,_group6,_group7,_group8,_group9,_group10,_group11,_group12,_group13]
 ];
 
 // Define the group reinforcements
@@ -117,7 +122,7 @@ _added =
 	[
 		[
 			"kill",
-			[_group1,_group2,_group3,_group4,_group5,_group6,_group7,_group8]
+			[_group1,_group2,_group3,_group4,_group5,_group6,_group7,_group8,_group9,_group10,_group11,_group12,_group13]
 		],
 		[
 			"playerNear",

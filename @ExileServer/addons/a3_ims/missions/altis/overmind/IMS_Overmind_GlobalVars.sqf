@@ -74,9 +74,9 @@ IMS_Overmind_AlarmEvent = {
 
 IMS_Overmind_JetSoundEvent = {
 	playSound "BattlefieldJet1_3D";
-	sleep 0.5;
+	sleep 3;
 	playSound "BattlefieldJet2_3D";
-	sleep 0.5;
+	sleep 3;
 	playSound "BattlefieldJet3_3D";
 };
 
@@ -112,3 +112,6 @@ IMS_Overmind_DMSCompletionEvent = {
 	// where you want to trigger a mission completion "externally" using a script.
 	_missionInfo set [1, [["external",true]]];	
 };
+
+publicVariable "IMS_Overmind_AlarmEvent";
+publicVariable "IMS_Overmind_JetSoundEvent";
