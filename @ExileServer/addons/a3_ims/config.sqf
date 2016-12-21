@@ -5,8 +5,15 @@
 */
 
 /* --- Mission System Settings --- */
-	IMS_MissionLogs 						= true;	// Enable or disable IMS log messages.
-	IMS_AI_DynamicSimulation				= false; // [WIP] Enable Arma 3 dynamic simulation support for IMS. See more here: https://community.bistudio.com/wiki/Arma_3_Dynamic_Simulation 
+	IMS_MissionLogs 					= true;	// Enable or disable IMS log messages.
+	IMS_AI_DynamicSimulation			= false; // [WIP] Enable Arma 3 dynamic simulation support for IMS. See more here: https://community.bistudio.com/wiki/Arma_3_Dynamic_Simulation 
+	
+/* --- Debug Options --- */
+/* --- Aircraft Patrol Debug Options --- */	
+	IMS_DEBUG_MAPCENTER 				= false;
+	IMS_DEBUG_NEARESTLOCATIONS 			= false;
+	IMS_DEBUG_STARTINGPOSITIONS 		= false;
+	IMS_DEBUG_PATROLWAYPOINTS 			= false;
 	
 	/* --- General Supply-Crate Settings --- */
 	/* --- FOR ALL MISSIONS ON ALL MAPS --- */		
@@ -38,8 +45,6 @@
 		IMS_Fortress_VehicleLoot				= true;	// Enable/disable vehicle loot spawn on Fortress mission success.
 		IMS_Fortress_VehicleLootClass			= "Exile_Car_Ifrit";	// Vehicle Class that spawns if IMS_FortressVehicleLoot is true.
 		
-	/* --- WORK IN PROGRESS ---*/
-	/* --- DO NOT ENABLE THIS OPTION --- */
 	/* --- Overmind Mission Settings --- */
 	/* --- ALTIS MAP ONLY --- */
 		IMS_Overmind_MissionActive				= true;	// Enable or disable the Overmind Mission:

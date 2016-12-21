@@ -7,29 +7,29 @@
 
 // Add hold action to tablet object.
 [IMS_ScriptObject_OvermindTablet, "Pick up Tablet", "use", "_this distance _target < 5", {remoteExec ["IMS_Overmind_Tablet_ActionScript", 0, true];}, [], 2, true] call IMS_fnc_AddHoldAction;
+
 // Lock the Keypad for action change condition.
-IMS_ScriptObject_OvermindKeypad1 setVariable ["ExileIsLocked", -1, true];
-IMS_ScriptObject_OvermindKeypad2 setVariable ["ExileIsLocked", -1, true];
+//IMS_ScriptObject_OvermindKeypad1 setVariable ["ExileIsLocked", -1, true];
+//IMS_ScriptObject_OvermindKeypad2 setVariable ["ExileIsLocked", -1, true];
+
+// Add textures to keypads.
+IMS_ScriptObject_OvermindKeypad1 setObjectTextureGlobal [0, "textures\keypad.paa"];
+IMS_ScriptObject_OvermindKeypad2 setObjectTextureGlobal [0, "textures\keypad.paa"];
+
 // Close com center terminal.
 [IMS_ScriptObject_OvermindTerminal, 0] remoteExec ["BIS_fnc_dataTerminalAnimate", -2, true];
 [IMS_ScriptObject_OvermindTerminal,"green","green","green"] call BIS_fnc_DataTerminalColor;
+
 // Define the research terrain building.
 private _researchBuilding = ((nearestobjects [[16017.2,17042,-0.0274544], ["Land_Dome_Big_F"], 50]) select 0);
 // Lock the research building.
 _researchBuilding setVariable ["bis_disabled_Door_1" , 1, true];
 _researchBuilding setVariable ["bis_disabled_Door_2" , 1, true];
 _researchBuilding setVariable ["bis_disabled_Door_3" , 1, true];
+
 // Lock area gates.
 IMS_ScriptObject_OvermindGate1 setVariable ["ExileIsLocked", -1, true];
 IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsLocked", -1, true];
-// Give exit gate code.
-_pinCode = (1000 +(round (random 8999)));
-_pinCodeString = format ["0%1",_pinCode];
-IMS_Overmind_ExitCode = _pinCode;
-publicVariable "IMS_Overmind_ExitCode";
-IMS_ScriptObject_OvermindGate2 setVariable ["ExileAccessCode", _pinCodeString];
-IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsPersistent", true];
-IMS_ScriptObject_OvermindGate2 setVariable ["ExileIsSimulationMonitored", true];
 
 // Alarm Sound
 IMS_Overmind_AlarmEvent = {
@@ -72,6 +72,7 @@ IMS_Overmind_AlarmEvent = {
 	{_x say "air_raid"} foreach [IMS_ScriptObject_OvermindSpeaker1,IMS_ScriptObject_OvermindSpeaker2,IMS_ScriptObject_OvermindSpeaker3,IMS_ScriptObject_OvermindSpeaker4];
 };
 
+// Jet Sounds
 IMS_Overmind_JetSoundEvent = {
 	playSound "BattlefieldJet1_3D";
 	sleep 3;

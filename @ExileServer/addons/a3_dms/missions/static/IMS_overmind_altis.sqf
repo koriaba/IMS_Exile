@@ -91,13 +91,13 @@ _missionObjs =
 ];
 
 // Define Mission Start message
-_msgStart = ['#FFFF00', "A heavily guarded base has been located on the salt flats! There are reports they have a large weapon cache..."];
+_msgStart = ['#FFFF00', "A heavily guarded military base has been located near Telos! There are reports there are many supplys located.."];
 
 // Define Mission Win message
-_msgWIN = ['#0080ff',"Convicts have successfully assaulted the base on the salt flats and secured the cache!"];
+_msgWIN = ['#0080ff',"Convicts have successfully assaulted the military base near Telos!"];
 
 // Define Mission Lose message
-_msgLOSE = ['#FF0000',"Seems like the guards got bored and left the base, taking the cache with them..."];
+_msgLOSE = ['#FF0000',"Seems like the guards got bored and left the base, taking the supplys with them..."];
 
 // Define mission name (for map marker and logging)
 _missionName = "[IMS] Overmind";
