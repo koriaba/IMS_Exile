@@ -8,8 +8,7 @@
 
 IMS_Overmind_TaskEvent_1 = {
 	IMS_Overmind_Task_1 = player createSimpleTask ["Overmind - [Part 1] The Fallen Hero"];
-	IMS_Overmind_Task_1 setSimpleTaskDescription ["<img align='center' image='textures\mission.paa' width='360' height='360'/><br/><br/><font color='#db3a49'>Mission Information:</font><br/>The dead officer holds a dokument that contains military mission instructions.<br/>A big group of bandits have taken over the local military Base.<br/>There are sensitive research datas hosted on the servers in the area.<br/><br/><font color='#db3a49'>Mission Objective:</font><br/>The mission objective is to investigate the military base and find a way to recive the research datas from the servers.<br/><br/>Infiltrate the area and investigate anything that might be useful to achieve the success of this mission.",
-	"Overmind - [Part 1] The Fallen Hero","Investigate buildings in this area."];
+	IMS_Overmind_Task_1 setSimpleTaskDescription ["<img align='center' image='textures\mission.paa' width='360' height='360'/><br/><br/><font color='#db3a49'>Mission Information:</font><br/>The dead officer holds a dokument that contains military mission instructions.<br/>A big group of bandits have taken over the local military Base.<br/>There are sensitive research datas hosted on the servers in the area.<br/><br/><font color='#db3a49'>Mission Objective:</font><br/>The mission objective is to investigate the military base and find a way to recive the research datas from the servers.<br/><br/>Infiltrate the area and investigate anything that might be useful to achieve the success of this mission.","Overmind - [Part 1] The Fallen Hero","Investigate buildings in this area."];
 	IMS_Overmind_Task_1 setSimpleTaskType "search";
 	IMS_Overmind_Task_1 setSimpleTaskDestination [16104.9,16866.7,0];
 	IMS_Overmind_Task_1 setTaskState "Assigned";

@@ -1,6 +1,6 @@
 /*
 	IMS_fnc_SpawnAIGuard
-	Created by eraser1
+	Created by eraser1 and modified by Salutesh
 	Based off of WAI
 
 	Usage:

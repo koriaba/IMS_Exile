@@ -295,7 +295,7 @@ IMS_Overmind_Npc_ActionScript = {
 	// Notify player with toast.
 	[] remoteExec ["IMS_Toast_NewTask", _playerUnits, true];
 	sleep 5;
-	[[[15939.3,16993.6,0],[15939.2,16995.3,0]],[[15939.3,16993.6,0],[15925.9,16994.3,0],[15913.7,17011,0],[15899.6,17005.2,0],[15898.3,16972.9,0],[15914.3,16962.4,0],[15926.1,16993.1,0]],2,_difficulty,"assault",_side] call IMS_fnc_SpawnAIGroup_Patrol;
+	[[[15939.3,16993.6,0],[15939.2,16995.3,0]],[[15939.3,16993.6,0],[15925.9,16994.3,0],[15913.7,17011,0],[15899.6,17005.2,0],[15898.3,16972.9,0],[15914.3,16962.4,0],[15926.1,16993.1,0]],2,"hardcore","assault","bandit"] call IMS_fnc_SpawnAIGroup_Patrol;
 	IMS_ScriptObject_OvermindGate1 setVariable ["ExileIsLocked", 0, true];
 	IMS_ScriptObject_OvermindGate1 animate ["DoorRotationLeft", 1];
 	IMS_ScriptObject_OvermindGate1 animate ["DoorRotationRight", 1];

@@ -12,7 +12,7 @@ if (worldName == 'Tanoa') then
 {
 	diag_log "----------------------------------------------------------------------------------------------------";
 	diag_log "---------------- Starting Exile Interactive Mission System Server Addon Post-Init ------------------";
-	diag_log "----------------------------------------- Version 0.5.0 --------------------------------------------";
+	diag_log "----------------------------------------- Version 0.6.0 --------------------------------------------";
 	diag_log "----------------------------------------------------------------------------------------------------";
 	diag_log format['[IMS Server Addon] Load Interactive Mission Systems'];
 	if (IMS_Fortress_MissionActive) then {
@@ -39,7 +39,7 @@ if (worldName == 'Chernarus') then
 {
 	diag_log "----------------------------------------------------------------------------------------------------";
 	diag_log "---------------- Starting Exile Interactive Mission System Server Addon Post-Init ------------------";
-	diag_log "----------------------------------------- Version 0.5.0 --------------------------------------------";
+	diag_log "----------------------------------------- Version 0.6.0 --------------------------------------------";
 	diag_log "----------------------------------------------------------------------------------------------------";
 	diag_log format['[IMS Server Addon] Load Interactive Mission Systems'];
 	if (IMS_Fortress_MissionActive) then {
@@ -66,7 +66,7 @@ if (worldName == 'Altis') then
 {
 	diag_log "----------------------------------------------------------------------------------------------------";
 	diag_log "---------------- Starting Exile Interactive Mission System Server Addon Post-Init ------------------";
-	diag_log "----------------------------------------- Version 0.5.0 --------------------------------------------";
+	diag_log "----------------------------------------- Version 0.6.0 --------------------------------------------";
 	diag_log "----------------------------------------------------------------------------------------------------";
 	diag_log format['[IMS Server Addon] Load Interactive Mission Systems'];
 	if (IMS_Overmind_MissionActive) then {
