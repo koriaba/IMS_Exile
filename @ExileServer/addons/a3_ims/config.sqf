@@ -8,13 +8,6 @@
 	IMS_MissionLogs 					= true;	// Enable or disable IMS log messages.
 	IMS_AI_DynamicSimulation			= false; // [WIP] Enable Arma 3 dynamic simulation support for IMS. See more here: https://community.bistudio.com/wiki/Arma_3_Dynamic_Simulation 
 	
-/* --- Debug Options --- */
-/* --- Aircraft Patrol Debug Options --- */	
-	IMS_DEBUG_MAPCENTER 				= false;
-	IMS_DEBUG_NEARESTLOCATIONS 			= false;
-	IMS_DEBUG_STARTINGPOSITIONS 		= false;
-	IMS_DEBUG_PATROLWAYPOINTS 			= false;
-	
 	/* --- General Supply-Crate Settings --- */
 	/* --- FOR ALL MISSIONS ON ALL MAPS --- */		
 		IMS_SupplyWeapons 					= ["SMG_05_F","hgun_PDW2000_F","hgun_ACPC2_F","hgun_P07_F","arifle_ARX_ghex_F","hgun_Pistol_heavy_02_F","hgun_Rook40_F","arifle_MXC_khk_F"];
