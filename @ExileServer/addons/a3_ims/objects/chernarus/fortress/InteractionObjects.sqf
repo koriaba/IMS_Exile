@@ -17,8 +17,8 @@
 
 [
 	["Land_Document_01_F", [6939.4, 11352.1, 390.402], [0, 0.995504, 0.0947163], [0.117711, -0.0940578, 0.988583], false, "Read the documents", "read", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Dokument_ActionScript", 0, true];}, "FortressDokument"],
-	["Land_Laptop_unfolded_F", [6879.71, 11458.7, 395.709], [0.0644279, -0.997922, 0], [0, 0, 1], false,"Hack the computer", "hack", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Laptop_ActionScript", 0, true];}, "FortressLaptop"],
-	["Land_DataTerminal_01_F", [6908.56, 11428.7, 425.618], [-0.998919, -0.0464787, 0], [0, 0, 1], false,  "Deactivate terminal link", "deactivate", "charge", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Terminal_ActionScript", 0, true];}, "FortressTerminal"],
+	["Land_Laptop_unfolded_F", [6879.71, 11458.7, 395.709], [0.0644279, -0.997922, 0], [0, 0, 1], false, "Hack the computer", "hack", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Laptop_ActionScript", 0, true];}, "FortressLaptop"],
+	["Land_DataTerminal_01_F", [6908.56, 11428.7, 425.618], [-0.998919, -0.0464787, 0], [0, 0, 1], false, "Deactivate terminal link", "deactivate", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Terminal_ActionScript", 0, true];}, "FortressTerminal"],
 	["Land_FieldToilet_F", [6890.29, 11454.8, 395.471], [0.443854, 0.896099, 0], [0, 0, 1], false, "Investigate toilet", "inspect", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Toilet_ActionScript_1", 0, true];}, "FortressToilet"],
 	["B_CargoNet_01_ammo_F", [6900.47, 11388.2, 394.742], [-0.15802, -0.987436, 0], [0, 0, 1], false, "Investigate bomb", "inspect", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Bomb_ActionScript", 0, true];}, "FortressBomb_1"],
 	["B_CargoNet_01_ammo_F", [6881.65, 11517.7, 392.678], [-0.198375, 0.980126, 0], [0, 0, 1], false, "Investigate bomb", "inspect", "_this distance _target < 5", {remoteExec ["IMS_Fortress_Bomb_ActionScript", 0, true];}, "FortressBomb_2"],
